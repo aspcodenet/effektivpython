@@ -47,14 +47,14 @@ start = timeit.default_timer()
 get_car_by_reg(cars, car_1000)
 end = timeit.default_timer()
 
-print(f"Tog {end-start} sec att hitta bil på 1000:e plats")
+print(f"Tog {(end-start)*1000} ms att hitta bil på 1000:e plats")
 
 
 start = timeit.default_timer()
 get_car_by_reg(cars, car_1000000)
 end = timeit.default_timer()
 
-print(f"Tog {end-start} sec att hitta bil på 1000000:e plats")
+print(f"Tog {(end-start)*1000} ms att hitta bil på 1000000:e plats")
 
 
 ####### IMPROVEMENT ########
@@ -75,14 +75,14 @@ start = timeit.default_timer()
 get_car_by_reg_dict_version(dict_cars, car_1000)
 end = timeit.default_timer()
 
-print(f"Tog {end-start} sec att hitta bil på 1000:e plats i dict-versionen")
+print(f"Tog {(end-start)*1000} ms att hitta bil på 1000:e plats i dict-versionen")
 
 
 start = timeit.default_timer()
 get_car_by_reg_dict_version(dict_cars, car_1000000)
 end = timeit.default_timer()
 
-print(f"Tog {end-start} sec att hitta bil på 1000000:e plats i dict-versionen")
+print(f"Tog {(end-start)*1000} ms att hitta bil på 1000000:e plats i dict-versionen")
 
 
 ############# USE SEARCH ############################# 
@@ -104,7 +104,7 @@ start = timeit.default_timer()
 get_car_by_reg_sorted_list(sorted_cars, car_1000)
 end = timeit.default_timer()
 
-print(f"Tog {end-start} sec att hitta bil på 1000:e plats i sorted-versionen")
+print(f"Tog {(end-start)*1000} ms att hitta bil på 1000:e plats i sorted-versionen")
 
 
 start = timeit.default_timer()
@@ -112,7 +112,7 @@ get_car_by_reg_sorted_list(sorted_cars, car_1000000)
 end = timeit.default_timer()
 
 
-print(f"Tog {end-start} sec att hitta bil på 1000000:e plats i sorted-versionen")
+print(f"Tog {(end-start)*1000} ms att hitta bil på 1000000:e plats i sorted-versionen")
 
 ############ Biniary-Search #######################
 
@@ -139,11 +139,11 @@ start = timeit.default_timer()
 bin_search_cars_by_reg(sorted_cars, car_1000)
 end = timeit.default_timer()
 
-print(f"Tog {end-start} sec att hitta bil på 1000:e plats i sorted-versionen")
+print(f"Tog {(end-start)*1000} ms att hitta bil på 1000:e plats i binsearch-versionen")
 
 
 start = timeit.default_timer()
 bin_search_cars_by_reg(sorted_cars, car_1000000)
 end = timeit.default_timer()
        
-print(f"Tog {end-start} sec att hitta bil på 1000000:e plats i sorted-versionen")
+print(f"Tog {(end-start)*1000} ms att hitta bil på 1000000:e plats i binsearch-versionen")
