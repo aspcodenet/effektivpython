@@ -2,6 +2,7 @@ import string
 import random
 import timeit
 
+ANTAL_BILAR = 10_000_000
 
 class Car:
     def __init__(self, reg:str):
@@ -24,7 +25,7 @@ cars:list[Car] = []
 
 # print(generate_reg())
 
-for car in range(1_000_000):
+for car in range(ANTAL_BILAR):
     new_reg = generate_reg()
     new_car = Car(new_reg)
     cars.append(new_car)
@@ -41,7 +42,7 @@ def get_car_by_reg(cars:list[Car], reg:str) -> bool:
     return False
 
 car_1000 = cars[1000].reg
-car_1000000 = cars[-1].reg
+car_1000000 = cars[ANTAL_BILAR - 1].reg
 
 start = timeit.default_timer()
 get_car_by_reg(cars, car_1000)
