@@ -12,7 +12,7 @@ class Car:
 
 list_of_cars = []
 
-for i in range(10000000):
+for i in range(1000000):
     # slumpa fram ett regnummer
     registration_number = ""
     for _ in range(3):
