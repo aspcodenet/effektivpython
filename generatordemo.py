@@ -27,9 +27,12 @@ def two_or_three(t):
 
 # List comprehension: computes ALL values right now and stores them.
 nya_tal_list = [two_or_three(t) for t in tal]
+print("NU") # denna rad kkommer att köras när hela listan är klar
 
 # Generator expression: computes NOTHING yet. It just remembers the recipe.
 nya_tal_gen = (two_or_three(t) for t in tal)
+for t in nya_tal_gen:
+    print(t)  # denna rad körs först när vi kommer hit, en i taget
 
 print("List version :", nya_tal_list)
 print("Gen version  :", nya_tal_gen)  # not the numbers! just a generator object

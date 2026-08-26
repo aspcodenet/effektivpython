@@ -14,7 +14,7 @@ class Player:
         self.positions = positions
 
 
-def read_csv_file():
+def read_csv_file()-> list[Player]:
     if not os.path.exists(FILNAMN):
         print(f"Filen '{FILNAMN}' hittades inte.")
         return []
