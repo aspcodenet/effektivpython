@@ -1,0 +1,214 @@
+def calculateSalary():
+    return 100
+
+def calculatePrice():
+    return 200
+
+
+def timing_decorator(funktionsAliaset):
+    def wrapper(*args, **kwargs):
+        start = default_timer()
+        x = funktionsAliaset(*args, **kwargs)
+        end = default_timer()
+        print(f"Det tog {end-start}")
+        return x 
+    return wrapper
+
+
+def print_decorator(funktionsAliaset):
+    def wrapper(*args, **kwargs):
+        print("Starting")
+        x = funktionsAliaset(*args, **kwargs)
+        print("Ending")
+        return x 
+    return wrapper
+
+@timing_decorator
+@print_decorator
+def calulcateTest(a,b);
+    return a + b
+
+a = calulcateTest(5,10) 
+
+def generate_power(exponent):
+    def power(base):
+        return base ** exponent
+    return power
+
+raise_two = generate_power(2)
+raise_three = generate_power(3)
+raise_two(4)
+raise_two(5)
+
+
+def test():
+    def bla():
+        pass
+
+    print("Starting")
+    bla()
+    print("Ending")
+
+
+def printAndCall_decorator(func):
+    print("Starting")
+    func()
+    print("Ending")
+
+printAndCall_decorator(calculateSalary)
+printAndCall_decorator(calculatePrice)   
+
+# Tänk om vi vill skriva ut start och sluttid för varje funktion. 
+# Vi ska sen använda en decorator för att göra detta.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def print_decorator( func ):
+    print("Starting")
+    func()
+    print("Ending")
+
+
+# 1. minska for loopar
+listOfNumbers = [1, 20, 3, 40, 5,30, 7, 80, 9, 100]
+
+# Algoritm för att hitta minsta talet i listan
+# Algoritm för att hitta största talet i listan
+
+
+@dataclass
+class Player:
+    id: str
+    age: int
+    namn: str
+    teamname: str
+    games: int
+    goals: int
+    ass: int
+    positions: str
+
+    def __init__(self, id, age, namn, teamname, games, goals, ass, positions):
+        self.id = id
+        self.namn = namn
+        self.teamname = teamname
+        self.games = games
+        self.goals = goals
+        self.ass = ass
+        self.positions = positions
+
+
+def GetOldestAndYoungest(allPlayers:list[Player]):
+    youngestSoFar = allPlayers[0]
+    oldestSoFar = allPlayers[0]
+    for player in allPlayers:
+        if player.age < youngestSoFar.age:
+            youngestSoFar = player
+        if player.age > oldestSoFar.age:
+            oldestSoFar = player
+    return youngestSoFar, oldestSoFar
+
+team = [Player("1", 25, "Alice", "Team A", 10, 5, 3, "Forward"), Player("2", 30, "Bob", "Team B", 15, 8, 5, "Midfielder")]
+
+def getMin(listOfNumbers: list) -> int:
+    youngestSoFar = listOfNumbers[0]
+    for number in listOfNumbers:
+        if number < youngestSoFar:
+            youngestSoFar = number
+    return youngestSoFar
+
+def getMax(listOfNumbers: list) -> int:
+    oldestSoFar = listOfNumbers[0]
+    for number in listOfNumbers:
+        if number > oldestSoFar:
+            oldestSoFar = number
+    return oldestSoFar
+
+# @dataclass
+# class MinMax:
+#     min: int
+#     max: int
+
+def getMinMax(listOfNumbers: list) -> int,int:
+    youngestSoFar = listOfNumbers[0]
+    oldestSoFar = listOfNumbers[0]
+    for number in listOfNumbers:
+        if number < youngestSoFar:
+            youngestSoFar = number
+        if number > oldestSoFar:
+            oldestSoFar = number
+    return youngestSoFar, oldestSoFar
+
+mininmal, maximal = getMinMax(listOfNumbers)
+
+# Ni tror att ni kan parametrar till funktioner
+def add(a: int, b: int) -> int:
+    return a + b
+
+result = add(5,10)
+
+
+print("Hej")
+print("Hej", " hur mår du")
+print(result)
+
+
+
+def team_print(team_name, *years):
+    print(f"{team_name}")
+    for year in years:
+        print(f"År: {year}")
+
+def team_print2(team_name, years):
+    print(f"{team_name}")
+    for year in years:
+        print(f"År: {year}")
+
+team_print2("Luleå HF", ["1996"])
+team_print2("Leksands IF", ["1969", "1973", "1974", "1975"])
+team_print("Luleå HF", "1996")
+team_print("Leksands IF","1969", "1973", "1974", "1975")
+                               
+
+def greet_me(**kwargs):
+    for key, value in kwargs.items():
+        print("{0} = {1}".format(key, value))
+
+greet_me(name="yasoob", age=25,country="Norway")
+
+
+
+def calculateTotalSum(*args):
+    totalSum = 0
+    for number in args:
+        totalSum += number
+    print(totalSum)
+
+# function call
+calculateTotalSum()
+calculateTotalSum(5, 4, 3, 2, 1)
+calculateTotalSum(5, 4, 3)
+
+
+

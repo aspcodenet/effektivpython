@@ -30,6 +30,9 @@ for player in readPlayerFromFileGenerator("hockeyplayers.csv"):
     print(player.namn, player.goals)
 
 
+lista = readsListFromFile()
+filtered_lista = removeBad(lista)
+
 
 
 def squareOneToTen():
