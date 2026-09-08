@@ -1,5 +1,8 @@
 # Stefans coola projekt
 
+Gör en readme med lite olika rubriker. Beskriv vad applikationen gör, vilken teknik som använts
+Lite skärmbilder!!
+
 bla detta är **ett** test *hej* hej
 
 ## test
@@ -12,6 +15,10 @@ git status
 git add
 git commit
 ```
+
+
+> [!CAUTION]
+> Kör inte! Det är den dåliga programmeraren Stefan som gjort detta
 
 ### Bra spelare
 - Peter Forsberg
