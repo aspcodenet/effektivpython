@@ -3,10 +3,9 @@ class PathFinder:
     def __init__(self, maze):
         self.maze = maze
         self.resulting_path = []  # Fungerar som en stack (använder append/pop)
-        self.visited = {}  # Motsvarar std::map<std::string, bool>
+        self.visited = {}  
 
     def get_path(self):
-        # I C++-koden töms stacken och läggs i rätt ordning.
         # Eftersom Python-listan innehåller elementen i ordning returnerar vi en kopia.
         return list(self.resulting_path)
 
