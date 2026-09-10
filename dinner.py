@@ -1,5 +1,33 @@
 import random
 
+class Fly:
+    def __init__(self, name: str):
+        self.name = name
+    
+    def act(self):
+        actions = ["buzzes", "flies around", "lands on food"]
+        action = random.choice(actions)
+        print(f"{self.name} {action}.")
+    def might_level_up(self):
+        # Flies do not level up in this implementation
+        pass
+
+
+class Cat:
+    def __init__(self, name: str):
+        self.name = name
+
+    def act(self):
+        actions = ["meows", "purrs", "scratches"]
+        action = random.choice(actions)
+        print(f"{self.name} {action}.")
+    def might_level_up(self):
+        # Cats do not level up in this implementation
+        pass
+
+    
+
+
 # class är ingenting - template - ritning
 # OOP = object oriented programming - tänk substantiv
 class Person:
@@ -48,16 +76,18 @@ stefan = Person("Stefan", 54)
 
 #stefan.age = age
 
+musse = Cat("Musse")
 kerstin = Person("Kerstin", 53)
 oliver = Person("Oliver", 18)
 josefine = Person("Josefine", 24)
-player_list = [stefan, kerstin, oliver, josefine]
+fly = Fly("Fly")
+player_list = [stefan, kerstin, oliver, josefine, musse, fly]
 
 # alla börjar med level 0
 # om man burps 3 gånger på raken så levelar man upp
 
 while True:
     for player in player_list:
-        player.act()
+        player.act() # cats act är annorlunda än persons act = polymorfism
         player.might_level_up()
     input("Press Enter to continue to the next round...")
