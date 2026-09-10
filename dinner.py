@@ -6,6 +6,12 @@ class Person:
     def __init__(self, name: str, age: int): # mandatory
         self.name = name
         self.__age = age
+        self.__level = 0
+        self.__burps_in_a_row = 0
+        self.list_of_actions = []
+        # self.latestaction = ""
+        # self.nextLatestAction = ""
+        # self.nextNextLatestAction = ""
 
     @property
     def age(self):
@@ -24,9 +30,17 @@ class Person:
         actions = ["eats", "drinks", "burps"]
         action = random.choice(actions)
         print(f"{self.name} {action}.")
+        if action == "burps":
+            self.__burps_in_a_row += 1
+        else:
+            self.__burps_in_a_row = 0  # Reset the burp counter if the action is not a burp
 
     def might_level_up(self):
-        pass
+        # kanske öka och
+        if self.__burps_in_a_row == 3:
+            print(f"{self.name} has burped 3 times in a row and levels up!")
+            self.__level += 1
+            self.__burps_in_a_row = 0  # Reset the burp counter after leveling up
 
 
 stefan = Person("Stefan", 54)
@@ -36,9 +50,11 @@ stefan = Person("Stefan", 54)
 
 kerstin = Person("Kerstin", 53)
 oliver = Person("Oliver", 18)
-josefine = Person("Josefine", 23)
+josefine = Person("Josefine", 24)
 player_list = [stefan, kerstin, oliver, josefine]
 
+# alla börjar med level 0
+# om man burps 3 gånger på raken så levelar man upp
 
 while True:
     for player in player_list:
